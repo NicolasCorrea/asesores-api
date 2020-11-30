@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('name');
-            $table->boolean('active')->nullable()->default(false);
+            $table->enum('status', ['active', 'inactive'])->nullable()->default('active');
             $table->timestamps();
         });
     }
