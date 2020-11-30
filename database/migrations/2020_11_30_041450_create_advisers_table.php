@@ -17,6 +17,7 @@ class CreateAdvisersTable extends Migration
             $table->id();
             $table->string('name', 100);
             $table->integer('cedula')->unsigned();
+            $table->integer('phone')->unsigned();
             $table->date('birthday');
             $table->enum('gender', ['f', 'm']);
             $table->string('client', 100);

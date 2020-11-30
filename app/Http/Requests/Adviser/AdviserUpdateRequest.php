@@ -27,6 +27,7 @@ class AdviserUpdateRequest extends FormRequest
     {
         return [
             "cedula" => "integer",
+            "phone" => "integer",
             "birthday" => "date",
         ];
     }
@@ -35,6 +36,7 @@ class AdviserUpdateRequest extends FormRequest
     {
         return [
             'cedula.integer' => 'La cedula no es un numero',
+            'phone.integer' => 'El teléfono no es un numero',
             'birthday.date' => 'La fecha de cumpleaños no esta en el formato correcto',
         ];
     }

@@ -48,6 +48,7 @@ class AdviserController extends Controller
         } catch (\Throwable $th) {
             return response()->json([
                 "message" => "failed to create adviser",
+                $th->getMessage()
             ], Response::HTTP_BAD_REQUEST);
         }
     }

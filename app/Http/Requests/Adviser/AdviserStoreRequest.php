@@ -28,6 +28,7 @@ class AdviserStoreRequest extends FormRequest
         return [
             "name" => "required",
             "cedula" => "required|integer",
+            "phone" => "required|integer",
             "birthday" => "required|date",
             "gender" => "required",
             "client" => "required",
@@ -41,6 +42,8 @@ class AdviserStoreRequest extends FormRequest
             'name.required' => 'El nombre es obligatorio',
             'cedula.required' => 'La cedula es obligatoria',
             'cedula.integer' => 'La cedula no es un numero',
+            'phone.required' => 'El teléfono es obligatorio',
+            'phone.integer' => 'El teléfono no es un numero',
             'birthday.required' => 'La fecha de cumpleaños es obligatoria',
             'gender.required' => 'El genero es obligatorio',
             'headquarter.required' => 'La sede es obligatoria',

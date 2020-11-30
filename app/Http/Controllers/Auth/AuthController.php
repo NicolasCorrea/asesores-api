@@ -35,11 +35,14 @@ class AuthController extends Controller
         if (is_null($user)) {
             return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
         }
+        if ($user->status === "inactive") {
+            return response()->json(['error' => 'InactiveUser'], Response::HTTP_UNAUTHORIZED);
+        }
         if (Hash::check('plain-text', $user->password)) {
             return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
         }
         $token = Auth::login($user);
 
-        return response()->json(["token" => $token, "type" => "bearer"], Response::HTTP_OK);
+        return response()->json(["token" => $token, "user" => $user,"type" => "bearer"], Response::HTTP_OK);
     }
 }

@@ -10,6 +10,7 @@ class Adviser extends Model
     protected $fillable = [
         "name",
         "cedula",
+        "phone",
         "birthday",
         "gender",
         "client",
